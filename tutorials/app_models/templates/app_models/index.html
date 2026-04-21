@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{{cars}}
+
+{% for car in cars %}
+<div>
+    {{car.model}}
+    {{car.price}}
+</div>
+{% endfor %}
+{% endblock %}
+
