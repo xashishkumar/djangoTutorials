@@ -41,11 +41,11 @@ STATE_CHOICES = (
     ("WB", "West Bengal"),
 )
 
-class Profile(models.Model)
+class Profile(models.Model):
     name = models.CharField(max_length=20)
     dob = models.DateField()
     gender = models.CharField(max_length=1)
-    Phone = models.CharField(max_length=50, help_text="Enter 10 digit number")
+    phone = models.CharField(max_length=50, help_text="Enter 10 digit number")
     area = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     state = models.CharField(choices=STATE_CHOICES,max_length=100) 
