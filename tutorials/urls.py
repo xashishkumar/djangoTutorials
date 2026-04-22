@@ -26,6 +26,6 @@ urlpatterns = [
     path('view/', include('app_views.urls')),
     path('template/', include('app_templates.urls')),
     path('model/', include('app_models.urls')),
-    path('form/', include('app_forms.urls')),
+
     path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
