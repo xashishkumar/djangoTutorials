@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+{% if profile %}
+<h1> Users </h1>
+{% for profile in profile  %}
+<ul><li>{{profile.name}}</li></ul>
+{% endfor %}
+
+{% else %} 
+<h1> NO DATA </h1>
+{% endif %}
+
+{% endblock %}
