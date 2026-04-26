@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid bg-light d-flex align-items-center justify-content-center" style="height: 90vh;">
+    <div class="row justify-content-center w-100">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4 p-sm-5">
+                    
+                    <h2 class="text-center mb-2 fw-bold text-dark">Welcome Back</h2>
+                    <p class="text-center text-muted small mb-4">Please enter your details to sign in</p>
+                    
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email or Username</label>
+                            <input type="text" name="username" class="form-control form-control-md bg-light border-0" placeholder="Enter your username" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label small fw-bold">Password</label>
+                                <a href="{% url "forgot" %}" class="text-danger small text-decoration-none">Forgot?</a>
+                            </div>
+                            <input type="password" name="password" class="form-control form-control-md bg-light border-0" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label small text-muted" for="remember">Remember me</label>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger btn-lg fw-bold rounded-3 py-2" style="background-color: #e61e4d; border: none;">
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="position-relative my-4">
+                        <hr class="text-muted m-0">
+                        <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small">Or</span>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="mb-0 small text-muted">New to Auth Systems? 
+                            <a href="{% url 'register' %}" class="text-danger fw-bold text-decoration-none">Create Account</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

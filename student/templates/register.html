@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid bg-light d-flex align-items-center justify-content-center" style="height: 100vh; overflow: hidden;">
+    <div class="row justify-content-center w-100">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4"> <h3 class="text-center mb-3 fw-bold text-dark">Create an Account</h3>
+                    
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="mb-2">
+                            <label class="form-label small fw-bold mb-1">Full Name</label>
+                            <input type="text" name="name" class="form-control form-control-md bg-light border-0" placeholder="Your Name">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label small fw-bold mb-1">Email Address</label>
+                            <input type="email" name="email" class="form-control form-control-md bg-light border-0" placeholder="you@example.com">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label small fw-bold mb-1">Password</label>
+                            <input type="password" name="password" class="form-control form-control-md bg-light border-0" placeholder="••••••••">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold mb-1">Confirm Password</label>
+                            <input type="password" name="confirm_password" class="form-control form-control-md bg-light border-0" placeholder="••••••••">
+                        </div>
+
+                        <div class="d-grid gap-2 mt-3">
+                            <button type="submit" class="btn btn-danger fw-bold rounded-3 py-2" style="background-color: #e61e4d; border: none;">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="position-relative my-3">
+                        <hr class="text-muted m-0">
+                        <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small" style="font-size: 0.75rem;">Or</span>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="mb-0 small">Existing user? 
+                            <a href="{% url "login" %}" class="text-danger fw-bold text-decoration-none">Login Now</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
